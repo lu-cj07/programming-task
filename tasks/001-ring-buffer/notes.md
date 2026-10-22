@@ -1,9 +1,57 @@
-# Task 001 Notes
+# Task 001 — 学习、调研与复盘记录
 
-Complete after implementation:
-- Meaning and range of head:
-- Meaning and range of tail:
-- Meaning and range of size:
-- How empty and full are distinguished:
-- Complexity of push and pop:
-- How you verified correctness:
+> 请用自己的语言填写。允许先写初步认识，再在编码与测试后修正。资料来源可写教材名称、版本、章节，或可访问的文档链接。
+
+## A. 前置阅读记录
+
+- 阅读的教材/课程及具体章节：
+- 查阅的标准库或工具文档：
+- 仍不理解的概念：
+
+## B. 自主调研
+
+### Q1. 环形队列的空/满歧义
+- 我的回答：
+- 资料来源：
+
+### Q2. vector 的 size、capacity、resize 与 reserve
+- 我的回答：
+- 资料来源：
+
+### Q3. 为什么类模板的实现通常在头文件中？
+- 我的回答：
+- 资料来源：
+
+### Q4. optional 相比哨兵值的优势
+- 我的回答：
+- 资料来源：
+
+### Q5. 写入时发生异常如何维护内部状态？
+- 我的回答：
+- 资料来源：
+
+## C. 设计与不变量
+
+- `head` 的含义及取值范围：
+- `tail` 的含义及取值范围：
+- 当前元素数量的含义及范围：
+- 空与满如何区分：
+- 每次成功 `push` / `pop` 后哪些条件必须成立：
+- 为什么容量为 1 时仍然正确：
+
+## D. 测试与调试
+
+- 本地操作系统、编译器及版本：
+- CMake 配置与测试命令：
+- 自己补充的边界测试：
+- 遇到的失败及原因：
+- Linux CI 结果：
+- Windows CI 结果：
+
+## E. 复盘
+
+- `push`、`pop` 的时间与空间复杂度：
+- 最有价值的测试及理由：
+- 如果支持并发访问，需要考虑哪些问题：
+- 本任务学到的 C++ 知识：
+- 仍然存在的问题：
