@@ -1,4 +1,0 @@
-/home/lu/programming-task/build/CMakeFiles/ring_buffer_test.dir
-/home/lu/programming-task/build/CMakeFiles/test.dir
-/home/lu/programming-task/build/CMakeFiles/edit_cache.dir
-/home/lu/programming-task/build/CMakeFiles/rebuild_cache.dir
