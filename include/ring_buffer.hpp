@@ -11,26 +11,45 @@ template <typename T>
 class RingBuffer {
 public:
     explicit RingBuffer(std::size_t capacity) {
-        (void)capacity;
-        throw std::logic_error("TODO: implement RingBuffer");
+        if(capacity <= 0){
+            throw std::invalid_argument("capacity can not be zero");
+        }
+        buffer = std::vector<T>(capacity);
+        head = tail = count = 0;
     }
     bool push(const T& value) {
-        (void)value;
-        throw std::logic_error("TODO: implement push");
+        if(count >= capacity()){
+            return false;
+        }
+        buffer[tail] = value;
+        tail = (tail + 1) % capacity();
+        count++;
+        return true;
     }
     std::optional<T> pop() {
-        throw std::logic_error("TODO: implement pop");
+        if(count <= 0){
+            return std::nullopt;
+        }
+        T val = buffer[head];
+        head = (head + 1) % capacity();
+        count--;
+        return val;
     }
     bool empty() const {
-        throw std::logic_error("TODO: implement empty");
+        return count == 0;
     }
     bool full() const {
-        throw std::logic_error("TODO: implement full");
+        return count == buffer.capacity();
     }
     std::size_t size() const {
-        throw std::logic_error("TODO: implement size");
+        return count;
     }
     std::size_t capacity() const {
-        throw std::logic_error("TODO: implement capacity");
+        return buffer.size();
     }
+private:
+    std::vector<T> buffer;
+    std::size_t head;
+    std::size_t tail;
+    std::size_t count;
 };
