@@ -18,7 +18,7 @@ public:
         head = tail = count = 0;
     }
     bool push(const T& value) {
-        if(count >= buffer.capacity()){
+        if(count >= capacity()){
             return false;
         }
         buffer[tail] = value;
@@ -45,7 +45,7 @@ public:
         return count;
     }
     std::size_t capacity() const {
-        return buffer.capacity();
+        return buffer.size();
     }
 private:
     std::vector<T> buffer;
