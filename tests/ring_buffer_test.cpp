@@ -3,6 +3,7 @@
 #include <deque>
 #include <random>
 #include <stdexcept>
+#include <iostream>
 
 int main() {
     bool threw = false;
@@ -14,6 +15,7 @@ int main() {
     assert(q.capacity() == 3 && q.size() == 0 && q.empty() && !q.full());
     assert(!q.pop().has_value());
     assert(q.push(1) && q.push(2) && q.push(3));
+    std::cout<<q.full()<<" "<<q.push(99)<<std::endl;
     assert(q.full() && !q.push(99));
     assert(q.pop() == 1 && q.pop() == 2);
     assert(q.push(4) && q.push(5));
