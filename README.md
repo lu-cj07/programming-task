@@ -5,12 +5,13 @@ A progressive, self-paced C++ / algorithms / computer systems training repositor
 ## Tasks
 
 - [Task 001 — Ring buffer](tasks/001-ring-buffer/README.md) — completed
-- [Task 002 — Timestamp index and binary search](tasks/002-timestamp-index/README.md) — current
+- [Task 002 — Timestamp index and binary search](tasks/002-timestamp-index/README.md) — completed
+- [Task 003 — Sensor log parser](tasks/003-sensor-log/README.md) — current
 
 ## Workflow
 
 1. Read the current task README and prerequisite reading.
-2. Implement on the task branch (for Task 002: `task/002-timestamp-index`).
+2. Implement on the task branch (for Task 003: `task/003-sensor-log`).
 3. Record research answers, math derivations, testing, and reflection in the task's `notes.md`.
 4. Push and open a pull request to `main`.
 5. GitHub Actions builds and tests on Linux and Windows.
