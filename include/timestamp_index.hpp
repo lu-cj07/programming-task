@@ -11,30 +11,62 @@
 class TimestampIndex {
 public:
     explicit TimestampIndex(std::vector<std::int64_t> timestamps) {
-        // TODO: store timestamps and reject unsorted input.
-        (void)timestamps;
-        throw std::logic_error("TODO: TimestampIndex constructor");
+        // 检查是否有序？
+        if(timestamps.cbegin() != timestamps.cend())
+            for(auto i = timestamps.cbegin(); i != timestamps.cend() - 1; i++){
+                if(*i > *(i + 1)){
+                    throw std::invalid_argument("sequences are unordered");
+                }
+            }
+        // 有序时进行赋值
+        timestamps_ = timestamps;
     }
 
+    // 首个大于等于target的下标
     std::size_t lower_bound(std::int64_t target) const {
-        (void)target;
-        throw std::logic_error("TODO: lower_bound");
+        if(timestamps_.size() == 0)
+            return 0;
+        decltype(size()) begin = 0;
+        decltype(begin) mid;
+        auto end = size() - 1;
+        while (begin < end)
+        {
+            mid = (end - begin)/2 + begin;
+            if(timestamps_[mid] >= target)
+                end = mid;
+            else
+                begin = mid + 1;
+        }
+
+        return timestamps_[begin] >= target ? begin : size();
     }
 
     std::size_t upper_bound(std::int64_t target) const {
-        (void)target;
-        throw std::logic_error("TODO: upper_bound");
+        if(timestamps_.size() == 0)
+            return 0;
+        decltype(size()) begin = 0;
+        decltype(begin) mid;
+        auto end = size() - 1;
+        while (begin < end)
+        {
+            mid = (end - begin)/2 + begin;
+            if(timestamps_[mid] <= target)
+                begin = mid + 1;
+            else if(timestamps_[mid] > target)
+                end = mid;
+        }
+
+        return timestamps_[begin] > target ? begin : size();
     }
 
     std::size_t count_range(std::int64_t begin, std::int64_t end) const {
-        (void)begin;
-        (void)end;
-        throw std::logic_error("TODO: count_range");
+        if(begin > end)
+            return 0;
+        return lower_bound(end) - lower_bound(begin);
     }
 
     std::size_t size() const noexcept {
-        // TODO
-        return 0;
+        return timestamps_.size();
     }
 
 private:

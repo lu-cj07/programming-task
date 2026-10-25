@@ -7,6 +7,7 @@
 #include <random>
 #include <stdexcept>
 #include <vector>
+#include <iostream>
 
 int main() {
     using i64 = std::int64_t;
@@ -27,6 +28,7 @@ int main() {
         assert(index.upper_bound(3) == 6);
         assert(index.lower_bound(11) == 7);
         assert(index.upper_bound(11) == 7);
+        // std::cout<<index.count_range(-5, 3)<<std::endl;
         assert(index.count_range(-5, 3) == 3);
         assert(index.count_range(3, 10) == 3);
         assert(index.count_range(3, 3) == 0);
