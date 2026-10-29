@@ -4,8 +4,12 @@
 
 ## 自主调研
 1. getline 与 operator>>：
+    - getline可读取一行的数据。
+    - operator>> 遇到空格则停止。
 2. stoll 完整消费：
+    - 
 3. int64_t 和 int 范围：
+    -
 4. istream& 可测试性：
 5. RAII 与流：
 
