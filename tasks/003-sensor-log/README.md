@@ -17,7 +17,8 @@
 - 不使用正则表达式或第三方 CSV 库。总字符数 L 的时间复杂度目标 O(L)。
 
 ## 阅读
-C++ Primer 第 8 章流与 getline、第 5 章异常、第 7 章类。cppreference：getline、istringstream、stoll、invalid_argument。
+C++ Primer 第 8 章流与 getline、第 5 章异常、第 7 章类。
+cppreference：getline、istringstream、stoll、invalid_argument。
 
 ## 自主调研
 1. getline 与 operator>> 如何处理空白和换行？
