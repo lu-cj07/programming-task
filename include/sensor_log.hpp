@@ -15,7 +15,10 @@ class SensorLog {
 public:
     static SensorRecord parse_line(const std::string& line) {
         std::vector<std::string> temps;
+        // 数据中出现其他字符则为
         auto end = line.size();
+        
+        // \r回车，以保证crlf时有效
         if (end > 0 && line[end - 1] == '\r') {
             --end;
         }
@@ -63,6 +66,7 @@ public:
     }
 private:
     static std::string validate_integer(const std::string& field) {
+
         const auto first = field.find_first_not_of(" \t");
         if (first == std::string::npos) {
             throw std::invalid_argument("Empty field");
